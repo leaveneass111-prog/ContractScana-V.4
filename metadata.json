@@ -1,0 +1,6 @@
+{
+  "name": "ContractScan - ระบบบันทึกรายงานผลงานก่อสร้าง",
+  "description": "เว็บแอปพลิเคชันบันทึกข้อมูลและจัดทำเอกสารรายงานผลงานก่อสร้างภาครัฐ (เอกสารหน้า 1-8) สไตล์ Neumorphic (Soft UI) พร้อมระบบคลังจัดการหลายโครงการ (สร้าง สลับ ลบ สำเนา บันทึก) รองรับ Dark & Light Mode",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

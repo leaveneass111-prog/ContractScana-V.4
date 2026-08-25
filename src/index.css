@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Defaulting to High-End Dark Slate & Charcoal Theme */
+    --bg-base: #0c0e14;
+    --bg-surface: #12151f;
+    --bg-input: #090b10;
+    --accent-primary: #f97316;
+    --accent-gold: #f97316;
+    --accent-gold-light: #fb923c;
+    --accent-success: #10b981;
+    --accent-warning: #f59e0b;
+    --accent-danger: #ef4444;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-highlight: rgba(249, 115, 22, 0.25);
+
+    --shadow-flat: 6px 6px 14px #07080c, -6px -6px 14px #1a1e2d;
+    --shadow-flat-sm: 3px 3px 8px #07080c, -3px -3px 8px #1a1e2d;
+    --shadow-inset: inset 2.5px 2.5px 5px #06070b, inset -2.5px -2.5px 5px #181b28;
+    --shadow-inset-sm: inset 1.5px 1.5px 3.5px #06070b, inset -1.5px -1.5px 3.5px #181b28;
+    --shadow-pill-inset: inset 2px 2px 4px #050609, inset -2px -2px 4px #191c2a;
+    --shadow-hover: 7px 7px 18px #050609, -7px -7px 18px #1f2334;
+    --shadow-pressed: inset 4px 4px 8px #050609, inset -4px -4px 8px #161925;
+    --focus-ring: #f97316;
+  }
+
+  .dark {
+    --bg-base: #0c0e14;
+    --bg-surface: #12151f;
+    --bg-input: #090b10;
+    --accent-primary: #f97316;
+    --accent-gold: #f97316;
+    --accent-gold-light: #fb923c;
+    --accent-success: #10b981;
+    --accent-warning: #f59e0b;
+    --accent-danger: #ef4444;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-highlight: rgba(249, 115, 22, 0.25);
+
+    --shadow-flat: 6px 6px 14px #07080c, -6px -6px 14px #1a1e2d;
+    --shadow-flat-sm: 3px 3px 8px #07080c, -3px -3px 8px #1a1e2d;
+    --shadow-inset: inset 2.5px 2.5px 5px #06070b, inset -2.5px -2.5px 5px #181b28;
+    --shadow-inset-sm: inset 1.5px 1.5px 3.5px #06070b, inset -1.5px -1.5px 3.5px #181b28;
+    --shadow-pill-inset: inset 2px 2px 4px #050609, inset -2px -2px 4px #191c2a;
+    --shadow-hover: 7px 7px 18px #050609, -7px -7px 18px #1f2334;
+    --shadow-pressed: inset 4px 4px 8px #050609, inset -4px -4px 8px #161925;
+    --focus-ring: #f97316;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Sarabun', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: 'tnum' 1;
+    min-height: 100vh;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Custom Neumorphic utility classes */
+.neu-flat {
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-flat);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-flat-sm {
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-flat-sm);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-inset {
+  background-color: var(--bg-input);
+  box-shadow: var(--shadow-inset);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-inset-sm {
+  background-color: var(--bg-input);
+  box-shadow: var(--shadow-inset-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Inset Pill Capsule for Titles & Subheadings */
+.neu-pill-inset {
+  background-color: var(--bg-input);
+  box-shadow: var(--shadow-pill-inset);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Section Inset Capsule with Golden-Orange Bullet Indicator */
+.neu-section-capsule {
+  background-color: var(--bg-input);
+  box-shadow: var(--shadow-pill-inset);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.neu-button {
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-flat);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.neu-button:hover:not(:disabled) {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-highlight);
+  transform: translateY(-1px);
+}
+
+.neu-button:active:not(:disabled),
+.neu-button.active {
+  box-shadow: var(--shadow-pressed);
+  transform: translateY(0px);
+}
+
+.neu-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.neu-input {
+  background-color: var(--bg-input);
+  box-shadow: var(--shadow-inset);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s ease;
+}
+
+.neu-input:focus {
+  outline: none;
+  border-color: var(--focus-ring);
+  box-shadow: var(--shadow-inset), 0 0 0 2px rgba(249, 115, 22, 0.2);
+}
+
+.neu-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Seamless Input Row: Clean, borderless input that focuses cleanly */
+.seamless-input {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.45rem 0.75rem;
+  width: 100%;
+  transition: all 0.18s ease;
+}
+
+.seamless-input:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.seamless-input:focus {
+  outline: none;
+  background-color: var(--bg-input);
+  box-shadow: var(--shadow-inset-sm);
+  border-color: var(--border-highlight);
+}
+
+.seamless-input::placeholder {
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+/* Selective Inset: Sinks in with tactile shadow when focused or containing data */
+.selective-inset {
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  border-radius: 0.85rem;
+}
+
+.selective-inset.has-value,
+.selective-inset:focus-within {
+  background-color: var(--bg-input);
+  box-shadow: var(--shadow-inset-sm);
+  border-color: var(--border-subtle);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232738;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #39405a;
+}
+
+/* Print view styling for official Thai Government documents */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 14pt;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-page {
+    page-break-after: always;
+    padding: 2cm 2cm 2cm 2.5cm;
+    background: #ffffff;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+
+@layer utilities {
+  /* มิติแบบแบนเรียบระนาบ มีขอบนูนเล็กน้อย */
+  .neu-flat {
+    background: #141416;
+    box-shadow: 
+      -4px -4px 10px rgba(255, 255, 255, 0.02),
+      4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* มิติกดลึกลงไปในพื้นผิว (ใช้ภายในตัวตารางและช่องกรอกข้อมูล) */
+  .neu-pressed {
+    background: #111113;
+    box-shadow: 
+      inset 2px 2px 5px rgba(0, 0, 0, 0.6), 
+      inset -2px -2px 5px rgba(255, 255, 255, 0.02);
+  }
+}
